@@ -40,12 +40,27 @@ class Administrador extends Conexion
 
     public function getadmin()
     {
+      $row=null;
+      $statement=$this->db->prepare("SELECT * FROM usuarios WHERE Perfil='Administrador'");
+      $statement->execute();
+      while($result->$statement->fetch())
+      {
+        $row[]=$result;
+      }
+      result $row;
 
     }
 
     // funcion para consultar el usuario de acuerdo a su id
     public function getidad($Id)
     {
+      $row=null;
+      $statement=$this->db->prepare("SELECT * FROM usuarios WHERE id_usuario=:Id AND Perfil='Administrador'");
+      $statement->bindParam(':Id',$Id);
+      while($result->$statement->fetch())
+      {
+        $row[]=$result;
+      }
 
 
     }
@@ -53,12 +68,37 @@ class Administrador extends Conexion
     //funcion para actualizar los datos del usuario
     public function updatead($Id,$Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Estado);
     {
-
+      $statement=$this->db->prepare("UPDATE usuarios SET Nombreusu =:Nombreusu, Apellidousu=:Apellidousu, Usuario=:Usuariousu, Passwordu=:Passwordu, Estado=:Estadousu WHERE id_usuario=$Id");
+      $statement->bindParam(':Id',$Id);
+      $statement->bindParam(':Nombreusu',$Nombreusu);
+      $statement->bindParam(':Apellidousu',$Apellidousu);
+      $statement->bindParam(':Usuariousu',$Usuariousu);
+      $statement->bindParam(':Passwordusu',$Passwordusu);
+      $statement->bindParam(':Estadousu',$Estadousu);
+      if8(statement->execute())
+      {
+        header(Location: '../paginas/index.php');
+      }else
+      {
+        header(Location: '../paginas/editar.php');
+      }
+    
+    
     }
     //funcion para eliminar un usuario
 public function deletead($Id)
 {
-
+  $statement=$this->db->prepare("DELETE FROM usuarios WHERE id_usuario=:Id");
+  $statement->bindParam(':Id',$Id);
+  if($statement->execute())
+  {
+    echo "usuario eliminado";
+    header(Location: '..paginas/index.php');
+  }else
+  {
+    echo "error no se puede eliminar usuario";
+    header(Location: '..paginas/eliminar.php');
+  }
 }
 
 
