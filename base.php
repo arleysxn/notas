@@ -2,7 +2,7 @@
 
 class Conexion
 {
-    protected $db;
+    public $db;
     private $drive = "mysql";
     private $host = "localhost";
     private $namebd = "Notas2023";
