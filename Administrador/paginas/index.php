@@ -12,10 +12,10 @@
         <a href="#" data-text="&nbsp;Inicio">&nbsp;Inicio&nbsp;</a>
       </li>
       <li style="--clr:#ff6493">
-        <a href="#" data-text="&nbsp;Docente">&nbsp;Docente&nbsp;</a>
+        <a href="../../Docentes/paginas/agregar.php" data-text="&nbsp;Docente">&nbsp;Docente&nbsp;</a>
       </li>
       <li style="--clr:#ffdd1c">
-        <a href="#" data-text="&nbsp;Estudiante">&nbsp;Estudiante&nbsp;</a>
+        <a href="../../Estudiantes/paginas/agregar.php" data-text="&nbsp;Estudiante">&nbsp;Estudiante&nbsp;</a>
       </li>
       <li style="--clr:#00dc82">
         <a href="#" data-text="&nbsp;Materias">&nbsp;Materias&nbsp;</a>
