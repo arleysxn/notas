@@ -9,7 +9,7 @@
 <body>
     <ul>
         <li style="--clr:#00ade1">
-        <a href="#" data-text="&nbsp;Inicio">&nbsp;Inicio&nbsp;</a>
+        <a href="../../inicio.php" data-text="&nbsp;Inicio">&nbsp;Inicio&nbsp;</a>
       </li>
       <li style="--clr:#ff6493">
         <a href="../../Docentes/paginas/agregar.php" data-text="&nbsp;Docente">&nbsp;Docente&nbsp;</a>
