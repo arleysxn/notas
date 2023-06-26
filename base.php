@@ -3,29 +3,34 @@
 class Conexion
 {
     public $db;
-    private $drive = "mysql";
+    private $drive= "mysql";
     private $host = "localhost";
-    private $namebd = "Notas2023";
+    private $dbname = "notas2023";
     private $user = "root";
-    private $Password = "";
+    private $password = "";
 
 
     public function __construct()
     {
-       
-        try{
-            $db = new PDO("{$this->drive}:host={$this->host};namebd={$this->namebd}", $this->user,$this->Password);
-            
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Conexion realizada";
-            echo "<br>";
-        }catch(PDOEXCEPTION $e){
-            echo "no se puede realizar la conexion ".$e.getMessage();
-            
-
-
+     try
+     {
+       $db = new PDO("{$this->drive}:host={$this->host};dbname={$this->dbname}",$this->user,$this->password);
+  
+       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+       return $db;
+  echo "conexion realizada";
+  
+     }catch(PDOException $e){
+  
+         echo "se tiene problemas para conectar ".$e->getMessage();
+  
+     }
+  
+  
     }
+  
+  
   }
-}
-
+ 
 ?>
