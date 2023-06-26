@@ -3,17 +3,18 @@ include_once('../../base.php');
 class Administrador extends Conexion
 {
 
-    public function __construct(){
+  public function __construct(){
 
-        $this->$db = parent::__construct();
+    $this->db=parent::__construct();
+  
     }
 
     //funcion para registar los usuarios
 
-    public function addadmi($Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Perfil,$Estadousu);
+    public function addadmi($Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Perfil,$Estadousu)
     {
        //crear la sentencia sql
-       $statement = $this->db->prepare("INSERT INTO usuarios(Nombreusu, Apellidousu, Usuariousu, Paswwordusu, Perfil, Estado)VALUES(:Nombreusu, :Apellidousu, :Usario, :Passwordu, :'Administrador', :'Activo')");
+       $statement = $this->db->prepare("INSERT INTO usuarios(Nombreusu, Apellidousu, Usuariousu, Paswwordusu, Perfil, Estado)VALUES(:Nombreusu, :Apellidousu, :Usario, :Passwordu, :'Perfil', :'Estadousu')");
 
        $statement->bindParam(':Nombreusu',$Nombreusu);
        $statement->bindParam(':Apellidousu',$Apellidousu);
@@ -39,15 +40,19 @@ class Administrador extends Conexion
     //funcion para consultar todos los usuarios administradores
 
     public function getadmin()
+   
     {
-      $row=null;
-      $statement=$this->db->prepare("SELECT * FROM usuarios WHERE Perfil='Administrador'");
-      $statement->execute();
-      while($result->$statement->fetch())
+      $result[];
+      $sql= "SELECT * FROM usuarios WHERE Perfil='Administrador'";
+      $result = $this->db->query($sql);
+      if($result->rowCount()>0)
       {
-        $row[]=$result;
+      while($row->$result->fetch())
+      {
+        $result[]=$row;
       }
-      result $row;
+    }
+      return $result;
 
     }
 
@@ -55,7 +60,7 @@ class Administrador extends Conexion
     public function getidad($Id)
     {
       $row=null;
-      $statement=$this->db->prepare("SELECT * FROM usuarios WHERE id_usuario=:Id AND Perfil='Administrador'");
+      $statement=$this->db->prepare("SELECT * FROM usuarios WHERE id_usuario=:Id");
       $statement->bindParam(':Id',$Id);
       while($result->$statement->fetch())
       {
@@ -66,7 +71,7 @@ class Administrador extends Conexion
     }
 
     //funcion para actualizar los datos del usuario
-    public function updatead($Id,$Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Estado);
+    public function updatead($Id,$Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Estado)
     {
       $statement=$this->db->prepare("UPDATE usuarios SET Nombreusu =:Nombreusu, Apellidousu=:Apellidousu, Usuario=:Usuariousu, Passwordu=:Passwordu, Estado=:Estadousu WHERE id_usuario=$Id");
       $statement->bindParam(':Id',$Id);
@@ -75,7 +80,7 @@ class Administrador extends Conexion
       $statement->bindParam(':Usuariousu',$Usuariousu);
       $statement->bindParam(':Passwordusu',$Passwordusu);
       $statement->bindParam(':Estadousu',$Estadousu);
-      if8(statement->execute())
+      if($statement->execute())
       {
         header(Location: '../paginas/index.php');
       }else
@@ -101,7 +106,7 @@ public function deletead($Id)
   }
 }
 
+    }
 
-}
 
 ?>
