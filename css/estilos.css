@@ -6,27 +6,29 @@ body{
     padding: 0;
     font-family: sans-serift;
     background: linear-gradient(#141e30, #243b55);
-    text-center: center;
+    
 }
-.contendor{
+
+.Contenedor
+{
     position: absolute;
     top: 50%;
     left: 50%;
     width: 400px;
-    padding: 40px;
+    padding: 50px;
     transform: translate(-50%, -50%);
     background: rgba(0,0,0,.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
 }
-.contenedor h2{
+.Contenedor h2{
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
     text-align: center;
 }
-.contenedor .usuario input{
+.Contenedor .Usuario input{
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -37,7 +39,7 @@ body{
     outline: none;
     background: transparent;
 }
-.contenedor .usuario label{
+.contenedor .Usuario label{
     position: absolute;
     top: 0;
     left: 0;
@@ -47,14 +49,14 @@ body{
     pointer-events: none;
     transition: .5s;
 }
-.contendor .usuario input:focus ~ label,
-.contenedor .usuario input:valid ~label{
+.Contenedor .Usuario input:focus ~ label,
+.Contenedor .Usuario input:valid ~label{
     top: -20px;
     left: 0;
     color: #03e9f4;
     font-size: 12px;
 }
-.contenedor form a{
+.Contenedor form a{
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -65,9 +67,9 @@ body{
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
-    letter-spacing: 40px;
+    letter-spacing: 20px;
 }
-.contenedor a:hover{
+.Contenedor a:hover{
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
@@ -76,15 +78,15 @@ body{
                 0 0 50px #03e9f4,
                 0 0 100px #03e9f4;
 }
-.contenedor a span{
+.Contenedor a span{
     position: absolute;
     display: block;
 }
-.contenedor a span:nth-child(1){
+.Contenedor a span:nth-child(1){
     top: 0;
     left: -100%;
     width: 100%;
-    heigth: 2px;
+   height: 2px;
     background: linear-gradient(90deg, transparent,#03e9f4);
     animation: btn-anim1 1s linear infinite;
 }
@@ -96,7 +98,7 @@ body{
         left: 100%;
     }
 }
-.contenedor a span:nth-child(2){
+.Contenedor a span:nth-child(2){
     top: -100%;
     left: 0%;
     width: 2px;
@@ -113,7 +115,7 @@ body{
         top: 100%;
     }
 }
-.contenedor a span:nth-child(3){
+.Contenedor a span:nth-child(3){
     right: -100%;
     bottom: 0%;
     height: 2px;
@@ -130,7 +132,7 @@ body{
         right: 100%;
     }
 }
-.contenedor a span:nth-child(4){
+.Contenedor a span:nth-child(4){
     bottom: -100%;
     left: 0;
     width: 2px;
