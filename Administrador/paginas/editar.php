@@ -9,28 +9,38 @@
         </head>
             <body>
                 <div class="Contenedor">
-                    <h2>Registro</h2>
-                    <form action="../controladores/agregrausuario.php" method="POST">
+                    <h2>ACTUALIZAR INFORMACION</h2>
+                    <?php
+                    include_once('../..conexion.php');
+                    include_once('../modelos/administrador.php');
+                    $Id = $_GET['Id'];
+
+                    $admin = new  Administrador();
+                    $row = $admin->getidad($Id);
+                    if($row)
+                        ?>
+                    <form action="../controladores/actualizarusuario.php" method="POST">
+                        <input type="hidde" name="Id" value="<?php echo [$Id]?>">
                         <div class="Usuario">
-                            <input type="text" required name="txtnombre">
+                            <input type="text" required name="txtnombre" value="<?php echo [$Nombreusu]?>">
                             <label>Nombre</label>
                         </div>
                             <div class="Usuario">
-                            <input type="text" required name="txtapellido">
+                            <input type="text" required name="txtapellido" value="<?php echo [$Apellidousu]?>">
                             <label>Apellido</label>
                             </div>
                             <div class="Usuario">
-                            <input type="text" required name="txtusuario">
+                            <input type="text" required name="txtusuario" value="<?php echo [$Usuariousu]?>">
                             <label>Usuario</label>
                         </div>
                             <div class="Usuario">
-                            <input type="text" required name="txtcontrasena">
+                            <input type="text" required name="txtcontrasena" value="<?php echo [$Paswordusu]?>">
                             <label>Contraseña</label>
                         </div>
                             <div class="Usuario">
                                 <p>Perfil:
                                     <label for="perfil"></label>
-                                    <select name="txtperfil">
+                                    <select name="txtperfil" value="<?php echo [$Perfil]?>">
                                         <option></option>
                                         <option value="Administrador">Administrador</option>
                                         <option value="Docente">Docentes</option>
@@ -40,7 +50,7 @@
                            <div class="Usuario">
                             <p>Estado:
                                 <label for="perfil"></label>
-                                <select name="txtestado">
+                                <select name="txtestado" value="<?php echo [$Estadousu]?>">
                                     <option></option>
                                     <option value="Activo">Activo</option>
                                     <option value="No activo">No activo</option>
@@ -53,13 +63,10 @@
                             <span></span>
                             <span></span>
                             <span></span>
-                            Registrarme
+                            ACTUALIZAR
         </a>
         </from>
         </div>
         
     </body>
 </html>
-        </html>
-
-arreglar (en fotos)
