@@ -11,7 +11,7 @@
                 <div class="Contenedor">
                     <h2>ACTUALIZAR INFORMACION</h2>
                     <?php
-                    include_once('../..conexion.php');
+                    include_once('../conexion.php');
                     include_once('../modelos/administrador.php');
                     $Id = $_GET['Id'];
 
@@ -22,25 +22,25 @@
                     <form action="../controladores/actualizarusuario.php" method="POST">
                         <input type="hidde" name="Id" value="<?php echo [$Id]?>">
                         <div class="Usuario">
-                            <input type="text" required name="txtnombre" value="<?php echo [$Nombreusu]?>">
+                            <input type="text" required name="txtnombre" value="<?php echo $row ['Nombreusu']?>">
                             <label>Nombre</label>
                         </div>
                             <div class="Usuario">
-                            <input type="text" required name="txtapellido" value="<?php echo [$Apellidousu]?>">
+                            <input type="text" required name="txtapellido" value="<?php echo $row ['Apellidousu']?>">
                             <label>Apellido</label>
                             </div>
                             <div class="Usuario">
-                            <input type="text" required name="txtusuario" value="<?php echo [$Usuariousu]?>">
+                            <input type="text" required name="txtusuario" value="<?php echo $row ['Usuario']?>">
                             <label>Usuario</label>
                         </div>
                             <div class="Usuario">
-                            <input type="text" required name="txtcontrasena" value="<?php echo [$Paswordusu]?>">
+                            <input type="text" required name="txtcontrasena" value="<?php echo $row ['Paswordu']?>">
                             <label>Contraseña</label>
                         </div>
                             <div class="Usuario">
                                 <p>Perfil:
                                     <label for="perfil"></label>
-                                    <select name="txtperfil" value="<?php echo [$Perfil]?>">
+                                    <select name="txtperfil" value="<?php echo $row ['Perfil']?>">
                                         <option></option>
                                         <option value="Administrador">Administrador</option>
                                         <option value="Docente">Docentes</option>
@@ -50,7 +50,7 @@
                            <div class="Usuario">
                             <p>Estado:
                                 <label for="perfil"></label>
-                                <select name="txtestado" value="<?php echo [$Estadousu]?>">
+                                <select name="txtestado" value="<?php echo $row ['Estado']?>">
                                     <option></option>
                                     <option value="Activo">Activo</option>
                                     <option value="No activo">No activo</option>
@@ -70,3 +70,4 @@
         
     </body>
 </html>
+        
