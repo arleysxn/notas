@@ -38,7 +38,7 @@ class Administrador extends Conexion
                 $resultset[] = $row;
             }
         }
-        return $resultset;
+        return $result;
   }
 
   // Función para consultar el usuario de acuerdo a su id
@@ -53,25 +53,23 @@ class Administrador extends Conexion
   }
 
   // Función para actualizar los datos del usuario
-  public function updatead($Id, $Nombreusu, $Apellidousu, $Usuariousu, $Passwordusu, $Perfil, $Estado)
+  public function updatead($Id,$Nombreusu,$Apellidousu,$Usuariousu,$Passwordusu,$Perfil,$Estadousu)
   {
-    $statement = $this->db->prepare("UPDATE usuarios SET id_usuario=:Id,Nombreusu=:Nombreusu, Apellidousu=:Apellidousu, Usuariousu=:Usuariousu, Passwordusu=:Passwordusu, Perfil=:Perfil, Estado=:Estado WHERE id_usuario=$Id");
-    $statement->bindParam(':Id', $Id);
-    $statement->bindParam(':Nombreusu', $Nombreusu);
-    $statement->bindParam(':Apellidousu', $Apellidousu);
-    $statement->bindParam(':Usuariousu', $Usuariousu);
-    $statement->bindParam(':Passwordusu', $Passwordusu);
-    $statement->bindParam(':Perfil', $Perfil);
-    $statement->bindParam(':Estado', $Estado);
-    if ($statement->execute()) 
-    {
-      header('Location:../paginas/index.php');
-
-    }else
-    {
-      header('Location:../paginas/editar.php');
-    }
-    
+     $statement=$this->db->prepare("UPDATE usuarios SET id_usuario=:Id,Nombreusu=:Nombreusu, Apellidousu=:Apellidousu, Usuario=:Usuariousu, Password=:Passwordusu,Perfil:=Perfil,Estado=:Estadousu WHERE id_usuario=$Id");
+     $statement->bindParam(':Id',$Id);
+     $statement->bindParam(':Nombreusu',$Nombreusu);
+     $statement->bindParam(':Apellidousu',$Apellidousu);
+     $statement->bindParam(':Usuariousu',$Usuariousu);            
+     $statement->bindParam(':Passwordusu',$Passwordusu);
+     $statement->bindParam(':Perfil',$Perfil);
+     $statement->bindParam(':Estadousu',$Estadousu);
+     if($statement->execute())
+     {
+        header('Location: ../pages/index.php');
+     }else 
+     {
+        header('Location: ../pages/editar.php');
+     }
   }
   // Función para eliminar un usuario
   public function deletead($Id)
