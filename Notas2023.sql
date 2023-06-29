@@ -34,6 +34,8 @@ Correodoc varchar(40) not null,
 Materia varchar(30) not null,
 Notas decimal(5,1) not null
 );
+alter table docente add column Perfildoc VARCHAR(60) not null;
+alter table docente add column Estadodoc VARCHAR(60) not null;
 
 create table notas_estudiantes(
 id int not null primary key auto_increment,
