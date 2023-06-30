@@ -43,7 +43,7 @@ body{
     top: 0;
     left: 0;
     padding: 10px 0;
-    font-size: 16px;
+    font-size: 50px;
     color: #fff;
     pointer-events: none;
     transition: .5s;
@@ -53,9 +53,9 @@ body{
     top: -20px;
     left: 0;
     color: #f4037b;
-    font-size: 12px;
+    font-size: 20px;
 }
-.Contenedor form a{
+.Contenedor form button{
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -68,7 +68,7 @@ body{
     margin-top: 40px;
     letter-spacing: 20px;
 }
-.Contenedor a:hover{
+.Contenedor button:hover{
     background: #f4037b;
     color: #fff;
     border-radius: 5px;
@@ -79,11 +79,11 @@ body{
                 0 0 50px #f4037b,
                 0 0 50px #f4037b;
 }
-.Contenedor a span{
+.Contenedor button span{
     position: absolute;
     display: block;
 }
-.Contenedor a span:nth-child(1){
+.Contenedor button span:nth-child(1){
     top: 0;
     left: -100%;
     width: 100%;
@@ -99,7 +99,7 @@ body{
         left: 100%;
     }
 }
-.Contenedor a span:nth-child(2){
+.Contenedor button span:nth-child(2){
     top: -100%;
     left: 0%;
     width: 2px;
@@ -116,7 +116,7 @@ body{
         top: 100%;
     }
 }
-.Contenedor a span:nth-child(3){
+.Contenedor button span:nth-child(3){
     right: -100%;
     bottom: 0%;
     height: 2px;
@@ -133,7 +133,7 @@ body{
         right: 100%;
     }
 }
-.Contenedor a span:nth-child(4){
+.Contenedor button span:nth-child(4){
     bottom: -100%;
     left: 0;
     width: 2px;
