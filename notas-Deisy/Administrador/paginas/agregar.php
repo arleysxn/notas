@@ -48,7 +48,12 @@
                                 </p> 
                             </div>                                   
                             
-                            <button type="submit" class="btn btn-danger">REGISTRAR</button>
+                            <button href="">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                                REGISTRAR</button>
         </from>
         </div>
         
