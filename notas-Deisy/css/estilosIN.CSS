@@ -6,7 +6,6 @@ body{
     padding: 0;
     font-family: sans-serift;
     background: linear-gradient(#141e30, #243b55);
-    
 }
 
 .Contenedor
@@ -14,7 +13,7 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
+    width: 500px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: rgba(0,0,0,.5);
@@ -23,7 +22,7 @@ body{
     border-radius: 10px;
 }
 .Contenedor h2{
-    margin: 0 0 30px;
+    margin: 0 0 50px;
     padding: 0;
     color: #fff;
     text-align: center;
@@ -54,13 +53,14 @@ body{
     top: -20px;
     left: 0;
     color: #1ff403;
-    font-size: 12px;
+    font-size: 20px;
+
 }
-.Contenedor form a{
+.Contenedor form button{
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #1ff403;
+    color: #1ff403;;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -69,20 +69,22 @@ body{
     margin-top: 40px;
     letter-spacing: 20px;
 }
-.Contenedor a:hover{
+.Contenedor button:hover{
     background: #1ff403;
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px #1ff403,
                 0 0 25px #1ff403,
                 0 0 50px #1ff403,
-                0 0 100px #1ff403;
+                0 0 100px #1ff403,
+                0 0 50px #1ff403,
+                0 0 50px #1ff403;
 }
-.Contenedor a span{
+.Contenedor button span{
     position: absolute;
     display: block;
 }
-.Contenedor a span:nth-child(1){
+.Contenedor button span:nth-child(1){
     top: 0;
     left: -100%;
     width: 100%;
@@ -98,7 +100,7 @@ body{
         left: 100%;
     }
 }
-.Contenedor a span:nth-child(2){
+.Contenedor button span:nth-child(2){
     top: -100%;
     left: 0%;
     width: 2px;
@@ -115,7 +117,7 @@ body{
         top: 100%;
     }
 }
-.Contenedor a span:nth-child(3){
+.Contenedor button span:nth-child(3){
     right: -100%;
     bottom: 0%;
     height: 2px;
@@ -132,7 +134,7 @@ body{
         right: 100%;
     }
 }
-.Contenedor a span:nth-child(4){
+.Contenedor button span:nth-child(4){
     bottom: -100%;
     left: 0;
     width: 2px;
